@@ -1,6 +1,7 @@
 [
   {
     "name": "N-TILT",
+    "author": "Nasko",
     "path": "Plugins/N-TILT.zip",
     "formats": ["VST3", "AU", "LV2"],
     "type": "fx",

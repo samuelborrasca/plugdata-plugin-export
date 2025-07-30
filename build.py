@@ -51,6 +51,7 @@ for plugin in plugins_config:
     build_dir = builds_parent_dir / f"Build-{name}"
     print(f"\nProcessing: {name}")
 
+    author = plugin.get("author", False)
     enable_gem = plugin.get("enable_gem", False)
     enable_sfizz = plugin.get("enable_sfizz", False)
     enable_ffmpeg = plugin.get("enable_ffmpeg", False)
@@ -61,6 +62,7 @@ for plugin in plugins_config:
         f"-B{build_dir}",
         f"-DCUSTOM_PLUGIN_NAME={name}",
         f"-DCUSTOM_PLUGIN_PATH={zip_path}",
+        f"-DCUSTOM_PLUGIN_COMPANY={author}",
         "-DCMAKE_BUILD_TYPE=Release",
         f"-DENABLE_GEM={'1' if enable_gem else '0'}",
         f"-DENABLE_SFIZZ={'1' if enable_sfizz else '0'}",
