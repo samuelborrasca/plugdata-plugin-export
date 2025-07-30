@@ -62,7 +62,7 @@ for plugin in plugins_config:
         f"-B{build_dir}",
         f"-DCUSTOM_PLUGIN_NAME={name}",
         f"-DCUSTOM_PLUGIN_PATH={zip_path}",
-        f"-DCUSTOM_PLUGIN_COMPANY={author}",
+        f"-DCUSTOM_PLUGIN_COMPANY=\"{author}\"",
         "-DCMAKE_BUILD_TYPE=Release",
         f"-DENABLE_GEM={'1' if enable_gem else '0'}",
         f"-DENABLE_SFIZZ={'1' if enable_sfizz else '0'}",
