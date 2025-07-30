@@ -1,0 +1,11 @@
+[
+  {
+    "name": "N-TILT",
+    "path": "Plugins/N-TILT.zip",
+    "formats": ["VST3", "AU", "LV2"],
+    "type": "fx"
+    "enable_gem": false,
+    "enable_sfizz": false,
+    "enable_ffmpeg": false
+  }
+]
