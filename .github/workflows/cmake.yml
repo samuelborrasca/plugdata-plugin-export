@@ -33,31 +33,6 @@ jobs:
           name: Build-macOS-Universal
           path: Build-macOS-Universal
 
-  macos-legacy-build:
-    runs-on: macos-13
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
-
-      - name: ccache
-        uses: hendrikmuhs/ccache-action@v1.2
-        with:
-          key: macos-legacy
-
-      - name: Build plugins
-        run: |
-          python3 ./build.py --compiler-launcher ccache
-          mv Build Build-macOS-Legacy
-
-      - name: Archive Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: Build-macOS-Legacy
-          path: Build-macOS-Legacy
-
   windows-64-build:
     runs-on: windows-2022
     steps:
