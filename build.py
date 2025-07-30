@@ -42,10 +42,6 @@ for plugin in plugins_config:
     formats = plugin.get("formats", [])
     is_fx = plugin.get("type", "").lower() == "fx"
 
-    if not zip_path.is_file():
-        print(f"Missing zip file for {name}: {zip_path}")
-        continue
-
     build_dir = builds_parent_dir / f"Build-{name}"
     print(f"\nProcessing: {name}")
 
