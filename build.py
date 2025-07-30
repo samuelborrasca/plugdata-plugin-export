@@ -101,3 +101,17 @@ for plugin in plugins_config:
             if os.path.exists(target_dir):
                 shutil.rmtree(target_dir)
             shutil.copytree(format_path, target_dir)
+
+    for pdb_file in build_dir.rglob("*.pdb"):
+            try:
+                pdb_file.unlink()
+                print(f"Removed: {pdb_file}")
+            except Exception as e:
+                print(f"Failed to remove {pdb_file}: {e}")
+
+    for pdb_file in build_dir.rglob("plugdata.*"): # weird plugdata build trash on Windows for some reason
+            try:
+                pdb_file.unlink()
+                print(f"Removed: {pdb_file}")
+            except Exception as e:
+                print(f"Failed to remove {pdb_file}: {e}")
