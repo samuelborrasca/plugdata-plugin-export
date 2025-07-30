@@ -94,14 +94,14 @@ for plugin in plugins_config:
             print(f"Successfully built: {target}")
         format_path = os.path.join(plugins_dir, fmt)
 
-        for pdb_file in format_path.rglob("*.pdb"):
+        for pdb_file in Path(format_path).resolve().rglob("*.pdb"):
                 try:
                     pdb_file.unlink()
                     print(f"Removed: {pdb_file}")
                 except Exception as e:
                     print(f"Failed to remove {pdb_file}: {e}")
 
-        for trash in format_path.rglob("plugdata.*"): # weird plugdata build trash on Windows for some reason
+        for trash in Path(format_path).resolve().rglob("plugdata.*"): # weird plugdata build trash on Windows for some reason
                 try:
                     trash.unlink()
                     print(f"Removed: {trash}")
