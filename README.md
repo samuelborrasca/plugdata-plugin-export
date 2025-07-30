@@ -1,5 +1,7 @@
 # Automated build script for plugdata powered plugins
 
+Note: this is currently still in development, don't use this in production yet!
+
 1. Fork this repository
 2. Add the plugin definitions you want to build to "config.json", and add the plugins you want to process (either as a folder or .zip file)
 3. Wait for github actions to complete, and download your plugins!
