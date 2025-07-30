@@ -3,7 +3,7 @@
     "name": "N-TILT",
     "author": "Nasko",
     "path": "Plugins/N-TILT.zip",
-    "formats": ["VST3", "AU", "LV2"],
+    "formats": ["VST3", "AU", "LV2", "CLAP"],
     "type": "fx",
     "enable_gem": false,
     "enable_sfizz": false,
