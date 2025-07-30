@@ -16,11 +16,9 @@ args = parser.parse_args()
 
 # Detect platform and choose CMake generator
 system = platform.system()
-if system == "Darwin":  # macOS
-    cmake_generator = ["-G", "Xcode"]
-elif system == "Windows":
+if system == "Windows":
     cmake_generator = ["-G", "Visual Studio 17 2022"]  # You can adjust this if using another version
-else:  # Assume Linux
+else:
     cmake_generator = ["-G", "Ninja"]
 
 # Load config.json
