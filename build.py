@@ -117,6 +117,8 @@ for plugin in plugins_config:
             src = os.path.join(format_path, plugin_filename);
             dst = os.path.join(target_dir, plugin_filename);
             if os.path.isdir(src):
+                shutil.rmtree(dst)
                 shutil.copytree(src, dst)
             else:
+                os.remove(dst)
                 shutil.copy2(src, dst)
