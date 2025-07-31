@@ -92,25 +92,24 @@ for plugin in plugins_config:
         else:
             print(f"Successfully built: {target}")
         format_path = os.path.join(plugins_dir, fmt)
+        target_dir = os.path.join(build_output_dir, fmt)
 
-        for pdb_file in Path(format_path).resolve().rglob("*.pdb"):
-            try:
-                pdb_file.unlink()
-            except Exception as e:
-                print(f"Failed to remove {pdb_file}: {e}")
+        if fmt == "Standalone":
+            if os.path.isdir(format_path):
+                if os.path.exists(target_dir):
+                    shutil.rmtree(target_dir)
+                shutil.copytree(format_path, target_dir)
+        else:
+            extension = ""
+            if fmt == "VST3":
+                extension = ".vst3"
+            elif fmt == "AU":
+                extension = ".component"
+            elif fmt == "LV2":
+                extension = ".lv2"
+            elif fmt == "CLAP":
+                extension = ".clap"
 
-        # weird plugdata build trash on Windows for some reason
-        for trash in Path(format_path).resolve().rglob("plugdata.*"):
-            try:
-                if trash.is_dir():
-                    shutil.rmtree(trash)
-            except Exception as e:
-                print(f"Failed to remove {trash}: {e}")
-
-        if os.path.isdir(format_path):
-            target_dir = os.path.join(build_output_dir, fmt)
-
-            # Clear existing target folder if it exists, then copy
-            if os.path.exists(target_dir):
-                shutil.rmtree(target_dir)
-            shutil.copytree(format_path, target_dir)
+            plugin_filename = name + extension;
+            os.makedirs(target_dir, exist_ok=True)
+            shutil.copytree(os.path.join(format_path, plugin_filename), os.path.join(target_dir, plugin_filename))
