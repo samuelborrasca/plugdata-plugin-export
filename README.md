@@ -61,4 +61,4 @@ Example:
 
 
 # Licensing note
-After building, the original patch file you used is directly accessible via the “Info” menu in the plugin. This is required to comply with the GPL license (required by both plugdata and the JUCE free tier), as your patch could now legally be considered as "source code" of the generated plugins.
+After building, the original patch file you used is directly accessible via the “Info” menu in the plugin. This is required to comply with the GPL license (required by both plugdata and the JUCE GPL tier), as your patch could now legally be considered as "source code" of the generated plugins.
