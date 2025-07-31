@@ -61,6 +61,7 @@ for plugin in plugins_config:
         f"-DENABLE_GEM={'1' if enable_gem else '0'}",
         f"-DENABLE_SFIZZ={'1' if enable_sfizz else '0'}",
         f"-DENABLE_FFMPEG={'1' if enable_ffmpeg else '0'}",
+        f"-DCUSTOM_PLUGIN_IS_FX={'1' if is_fx else '0'}"
     ]
 
     if args.compiler_launcher:
