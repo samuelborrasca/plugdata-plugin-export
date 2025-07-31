@@ -1,9 +1,9 @@
 [
   {
-    "name": "N-TILT",
-    "author": "Nasko",
-    "path": "Plugins/N-TILT.zip",
-    "formats": ["VST3", "AU", "LV2", "CLAP", "Standalone"],
+    "name": "Borrasca Sidechainer",
+    "author": "Borrasca",
+    "path": "Plugins/Borrasca Sidechainer.zip",
+    "formats": ["VST3"],
     "type": "fx",
     "enable_gem": false,
     "enable_sfizz": false,
