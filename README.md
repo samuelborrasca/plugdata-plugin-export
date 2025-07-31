@@ -3,9 +3,10 @@
 Note: this is currently still in development, don't use this in production yet!
 
 1. Fork this repository.
-2. Add your patch files and plugin definitions to config.json.
-3. Wait for GitHub Actions to complete the build.
-4. Download your VST3 / AU / CLAP / LV2 / Standalone plugins!
+2. Click on the "Actions" tab and enable github actions
+3. Add your patch files and plugin definitions to config.json.
+4. Wait for GitHub Actions to complete the build.
+5. Download your VST3 / AU / CLAP / LV2 / Standalone plugins!
 
 
 # Config syntax
