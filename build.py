@@ -116,5 +116,5 @@ for plugin in plugins_config:
             os.makedirs(target_dir, exist_ok=True)
             if os.path.isdir(src):
                 shutil.copytree(os.path.join(format_path, plugin_filename), os.path.join(target_dir, plugin_filename))
-            else
+            else:
                 shutil.copy2(os.path.join(format_path, plugin_filename), os.path.join(target_dir, plugin_filename))
