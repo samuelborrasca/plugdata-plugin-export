@@ -75,6 +75,8 @@ for plugin in plugins_config:
 
     # Build all combinations of type + format
     for fmt in formats:
+        if system != "Darwin" and fmt == "AU":
+            continue
         target = f"plugdata_{'fx_' if is_fx else ''}{fmt}"
         if fmt == "Standalone":
             target = "plugdata_standalone"
