@@ -17,7 +17,7 @@ args = parser.parse_args()
 # Detect platform and choose CMake generator
 system = platform.system()
 if system == "Windows":
-    cmake_generator = ["-G", "Visual Studio 17 2022"]  # You can adjust this if using another version
+    cmake_generator = ["-G", "Visual Studio 17 2022"]
 else:
     cmake_generator = ["-G", "Ninja"]
 
@@ -93,18 +93,18 @@ for plugin in plugins_config:
         format_path = os.path.join(plugins_dir, fmt)
 
         for pdb_file in Path(format_path).resolve().rglob("*.pdb"):
-                try:
-                    pdb_file.unlink()
-                    print(f"Removed: {pdb_file}")
-                except Exception as e:
-                    print(f"Failed to remove {pdb_file}: {e}")
+            try:
+                pdb_file.unlink()
+            except Exception as e:
+                print(f"Failed to remove {pdb_file}: {e}")
 
-        for trash in Path(format_path).resolve().rglob("plugdata.*"): # weird plugdata build trash on Windows for some reason
-                try:
-                    trash.unlink()
-                    print(f"Removed: {trash}")
-                except Exception as e:
-                    print(f"Failed to remove {trash}: {e}")
+        # weird plugdata build trash on Windows for some reason
+        for trash in Path(format_path).resolve().rglob("plugdata.*"):
+            try:
+                if trash.is_dir():
+                    shutil.rmtree(trash)
+            except Exception as e:
+                print(f"Failed to remove {trash}: {e}")
 
         if os.path.isdir(format_path):
             target_dir = os.path.join(build_output_dir, fmt)
