@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Theme theme="Nasko" toolbar_background="ff18191b" toolbar_text="ffdfe0e3"
+       toolbar_active="ff42a2c8" toolbar_hover="ff26272a" tabbar_background="ff18191b"
+       tab_text="ffdfe0e3" selected_tab_background="ff2b2d31" selected_tab_text="ffdfe0e3"
+       canvas_background="ff212225" canvas_text="ffdfe0e3" canvas_dots="ff767c88"
+       default_object_background="ff18191b" object_outline_colour="ff"
+       selected_object_outline_colour="ff42a2c8" gui_internal_outline_colour="ff626770"
+       toolbar_outline_colour="ff2c2e32" outline_colour="ff35383d" data_colour="ff42a2c8"
+       connection_colour="ffdfe0e3" signal_colour="ffff8500" dialog_background="ff18191b"
+       sidebar_colour="ff18191b" sidebar_text="ffdfe0e3" sidebar_background_active="ff26272a"
+       sidebar_active_text="ffdfe0e3" levelmeter_active="ff42a2c8" levelmeter_background="ff2b2d31"
+       levelmeter_thumb="ffe1e2e5" panel_background="ff292b2f" panel_foreground="ff18191b"
+       panel_text="ffdfe0e3" panel_background_active="ff33363b" panel_active_text="ffdfe0e3"
+       popup_background="ff18191b" popup_background_active="ff25272b"
+       popup_text="ffdfe0e3" popup_active_text="ffdfe0e3" slider_thumb="ff42a2c8"
+       scrollbar_thumb="ff767c88" graph_resizer="ff42a2c8" grid_colour="ff42a2c8"
+       caret_colour="ff42a2c8" text_object_background="ff212225" iolet_area_colour="ff212225"
+       iolet_outline_colour="ff63666f" comment_text_colour="ffdfe0e3"
+       dashed_signal_connections="1" straight_connections="0" thin_connections="0"
+       square_iolets="0" square_object_corners="0"/>
